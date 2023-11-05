@@ -1,0 +1,48 @@
+version: "3.8"
+# 用到的数据卷
+volumes:
+  data:
+  config:
+  plugin:
+# 网络
+networks:
+  es:
+# 服务
+services:
+  # es服务
+  elasticsearch:
+    # 指定镜像
+    image: elasticsearch:8.10.2
+    # 开放端口
+    ports: 
+      - "9200:9200"
+      - "9300:9300"
+    # 指定容器连接到的网络
+    networks: 
+      - "es"
+    # 环境变量
+    environment:
+      # 以单节点启动
+      - "discovery.type=single-node"
+      # 关闭安全认证
+      - "xpack.security.enabled=false"
+      # 指定es使用的内存,在练习时可以指定小点
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    # 数据卷映射的目录
+    volumes:
+      - data:/usr/share/elasticsearch/data
+      - config:/usr/share/elasticsearch/config
+      - plugin:/usr/share/elasticsearch/plugin
+  # kibana服务
+  kibana:
+    # 指定镜像
+    image: kibana:8.10.2    
+    # 开放端口
+    ports:
+      - "5601:5601"
+    # 指定容器连接到的网络
+    networks:
+      - "es"
+    # 指定本地文件覆盖容器内的文件
+    volumes:
+      - ./kibana.yml:/usr/share/config/kibana.yml
