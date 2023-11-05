@@ -1,0 +1,6 @@
+# 允许外部访问
+server.host: "0.0.0.0"
+server.shutdownTimeout: "5s"
+# es服务的地址
+elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+monitoring.ui.container.elasticsearch.enabled: true
