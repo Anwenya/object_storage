@@ -8,6 +8,7 @@ const (
 	RouterDataObjects     = "/objects/"
 	RouterApiObjects      = "/objects/"
 	RouterApiLocate       = "/locate/"
+	RouterApiVersions     = "/versions/"
 
 	RabbitExchangeKeyApiServer  = "apiServers"
 	RabbitExchangeKeyDataServer = "dataServers"
