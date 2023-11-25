@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"os"
 
-	"com.wlq/objects_storage/chapter2/data_server/heartbeat"
-	"com.wlq/objects_storage/chapter2/data_server/locate"
-	"com.wlq/objects_storage/chapter2/data_server/objects"
+	"com.wlq/objects_storage/chapter3/data_server/heartbeat"
+	"com.wlq/objects_storage/chapter3/data_server/locate"
+	"com.wlq/objects_storage/chapter3/data_server/objects"
 	"com.wlq/objects_storage/config"
 )
 
