@@ -17,7 +17,7 @@ func put(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
 		return
 	}
-	infoFile := os.Getenv(config.EnvKeyStorageRaoot) + "/temp/" + uuid
+	infoFile := os.Getenv(config.EnvKeyStorageRoot) + "/temp/" + uuid
 	datFile := infoFile + ".dat"
 	f, e := os.Open(datFile)
 	if e != nil {

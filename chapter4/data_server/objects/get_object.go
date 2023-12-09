@@ -12,7 +12,7 @@ import (
 )
 
 func getFile(hash string) string {
-	file := os.Getenv(config.EnvKeyStorageRaoot) + config.DirPath + hash
+	file := os.Getenv(config.EnvKeyStorageRoot) + config.DirPath + hash
 	f, _ := os.Open(file)
 	d := url.PathEscape(utils.CalculateHash(f))
 	f.Close()

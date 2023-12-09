@@ -19,7 +19,7 @@ func patch(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
 		return
 	}
-	infoFile := os.Getenv(config.EnvKeyStorageRaoot) + "/temp/" + uuid
+	infoFile := os.Getenv(config.EnvKeyStorageRoot) + "/temp/" + uuid
 	datFile := infoFile + ".dat"
 	f, e := os.OpenFile(datFile, os.O_WRONLY|os.O_APPEND, 0)
 	if e != nil {
@@ -50,7 +50,7 @@ func patch(w http.ResponseWriter, r *http.Request) {
 }
 
 func readFromFile(uuid string) (*tempInfo, error) {
-	f, e := os.Open(os.Getenv(config.EnvKeyStorageRaoot) + "/temp/" + uuid)
+	f, e := os.Open(os.Getenv(config.EnvKeyStorageRoot) + "/temp/" + uuid)
 	if e != nil {
 		return nil, e
 	}

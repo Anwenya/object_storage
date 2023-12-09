@@ -8,6 +8,6 @@ import (
 )
 
 func commitTempObject(datFile string, tempinfo *tempInfo) {
-	os.Rename(datFile, os.Getenv(config.EnvKeyStorageRaoot)+"/objects/"+tempinfo.Name)
+	os.Rename(datFile, os.Getenv(config.EnvKeyStorageRoot)+"/objects/"+tempinfo.Name)
 	locate.Add(tempinfo.Name)
 }

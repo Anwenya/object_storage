@@ -35,12 +35,12 @@ func post(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
-	os.Create(os.Getenv(config.EnvKeyStorageRaoot) + "/temp/" + t.Uuid + ".dat")
+	os.Create(os.Getenv(config.EnvKeyStorageRoot) + "/temp/" + t.Uuid + ".dat")
 	w.Write([]byte(uuid))
 }
 
 func (t *tempInfo) writeToFile() error {
-	f, e := os.Create(os.Getenv(config.EnvKeyStorageRaoot) + "/temp/" + t.Uuid)
+	f, e := os.Create(os.Getenv(config.EnvKeyStorageRoot) + "/temp/" + t.Uuid)
 	if e != nil {
 		return e
 	}

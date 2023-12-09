@@ -54,7 +54,7 @@ func StartLocate() {
 }
 
 func CollectObjects() {
-	files, _ := filepath.Glob(os.Getenv(config.EnvKeyStorageRaoot) + config.DirPath + "*")
+	files, _ := filepath.Glob(os.Getenv(config.EnvKeyStorageRoot) + config.DirPath + "*")
 	for i := range files {
 		hash := filepath.Base(files[i])
 		objects[hash] = 1

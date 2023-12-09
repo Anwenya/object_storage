@@ -25,7 +25,7 @@ func StartLocate() {
 			panic(e)
 		}
 		// 存在此文件则告知接口服务本数据服务的地址
-		if Locate(os.Getenv(config.EnvKeyStorageRaoot) + config.DirPath + object) {
+		if Locate(os.Getenv(config.EnvKeyStorageRoot) + config.DirPath + object) {
 			q.Send(msg.ReplyTo, os.Getenv(config.EnvKeyListenAddress))
 		}
 	}

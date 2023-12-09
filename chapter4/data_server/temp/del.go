@@ -10,7 +10,7 @@ import (
 
 func del(w http.ResponseWriter, r *http.Request) {
 	uuid := strings.Split(r.URL.EscapedPath(), "/")[2]
-	infoFile := os.Getenv(config.EnvKeyStorageRaoot) + "/temp/" + uuid
+	infoFile := os.Getenv(config.EnvKeyStorageRoot) + "/temp/" + uuid
 	datFile := infoFile + ".dat"
 	os.Remove(infoFile)
 	os.Remove(datFile)
